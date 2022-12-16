@@ -1,0 +1,20 @@
+{
+  "name": "promise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "promise.js",
+  "type": "module",
+  "scripts": {
+    "run:resolve": "node ./example/resolve.js",
+    "run:reject": "node ./example/reject.js",
+    "run:catch": "node ./example/catch.js",
+    "run:finally": "node ./example/finally.js",
+    "run:all": "node ./example/all.js",
+    "run:allSettled": "node ./example/allSettled.js",
+    "run:race": "node ./example/race.js",
+    "run:any": "node ./example/any.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

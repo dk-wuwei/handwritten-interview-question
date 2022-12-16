@@ -1,0 +1,21 @@
+{
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
+	},
+	"eslint.validate": [
+		"typescriptreact",
+		"typescript",
+		"javascriptreact",
+		"javascript",
+		"vue",
+		"html"
+	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 2,
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.bracketSpacing": true
+}
