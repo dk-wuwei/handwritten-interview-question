@@ -17,5 +17,36 @@ const myInstanceof = (L, R) => {
 	}
 };
 
-// 测试
-console.log(myInstanceof('12', String));
+function checkPrototype(obj, constructor) {
+	try {
+		const proto = Reflect.getPrototypeOf(obj);
+		const { prototype } = constructor;
+
+		if (!proto) return false;
+
+		if (proto === prototype) return true;
+
+		return checkPrototype(proto, constructor);
+	} catch (error) {
+		console.error(error);
+		return false;
+	}
+}
+
+class User {}
+
+class Admin extends User {}
+
+const dk = new Admin();
+
+// instanceof测试
+console.log('instanceof User =>', dk instanceof User);
+console.log('instanceof Admin =>', dk instanceof Admin);
+
+// myInstanceof测试
+console.log('myInstanceof User =>', myInstanceof(dk, User));
+console.log('myInstanceof Admin =>', myInstanceof(dk, Admin));
+
+// checkPrototype测试
+console.log('checkPrototype User =>', checkPrototype(dk, User));
+console.log('checkPrototype Admin =>', checkPrototype(dk, Admin));

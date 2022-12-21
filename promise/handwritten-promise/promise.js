@@ -22,6 +22,7 @@ class MyPromise {
 		this.rejectedCallBacks = []; // 失败回调函数数组
 		try {
 			// 执行回调函数 传入res, rej回调函数
+			// this 默认指向是调用函数的上下文 所以这里需要bind(this) 把当前类的this传递过去
 			executor(this.resolve.bind(this), this.reject.bind(this));
 		} catch (error) {
 			// 直接调用reject函数 返回错误原因
@@ -78,6 +79,7 @@ class MyPromise {
 						throw err;
 				  };
 
+		// TODO 不能返回当前Promise
 		// 返回新的promise对象，使其可以继续链式调用如：then catch
 		return new MyPromise((resolve, reject) => {
 			if (this.promiseState === MyPromise.PENDING) {
@@ -145,7 +147,7 @@ class MyPromise {
 	}
 
 	/**
-	 * @description Promise.resolve(value)  zhuan。
+	 * @description Promise.resolve(value)
 	 * @param value {any} 要解析为 MyPromise 对象的值
 	 * @returns {MyPromise} 返回新的promise对象，使其可以继续链式调用如：then catch
 	 */
