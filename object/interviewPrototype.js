@@ -44,8 +44,8 @@ new Foo.getName(); // 2 2
 // 下面一行是 先new Foo() 在拿到返回的实例对象.getName()
 new Foo().getName(); // 3 3
 
-/* 
-下面一行是 先new Foo() 在拿到返回的实例对象.getName()
-在拿到new Foo()返回的实例对象.getName() 的返回值 进行 newd调用
+/*
+ * 下面一行是 先new Foo() 在拿到返回的实例对象.getName()
+ * 在拿到new Foo()返回的实例对象.getName() 的返回值 进行 newd调用
  */
 new new Foo().getName(); // 3 3

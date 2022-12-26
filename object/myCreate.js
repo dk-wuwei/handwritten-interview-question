@@ -10,3 +10,7 @@ const obj = {
 };
 // 测试
 console.log(myCreate(obj).a);
+const num = Number(1);
+
+console.log(num); // [Number: 1]
+console.log(typeof num); // object

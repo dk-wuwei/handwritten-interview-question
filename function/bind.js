@@ -1,10 +1,10 @@
 // 实现bind
 
-/* 
-bind 返回了一个函数，对于函数来说有两种方式调用，一种是直接调用，一种是通过 new 的方式
-对于直接调用来说，这里选择了apply的方式实现，但对于参数需要注意：因为bind可以实现类似这样的代码 f.bind(obj, 1)(2)，所以需要将两边的参数拼接起来
-对于 new 的情况来说，不会被任何方式改变 this，所以对于这种情况我们需要忽略传入的 this
-*/
+/*
+ * bind 返回了一个函数，对于函数来说有两种方式调用，一种是直接调用，一种是通过 new 的方式
+ * 对于直接调用来说，这里选择了apply的方式实现，但对于参数需要注意：因为bind可以实现类似这样的代码 f.bind(obj, 1)(2)，所以需要将两边的参数拼接起来
+ * 对于 new 的情况来说，不会被任何方式改变 this，所以对于这种情况我们需要忽略传入的 this
+ */
 
 Function.prototype.myBind = function (context, ...outerArgs) {
 	// this->func context->obj outerArgs->[10,20]

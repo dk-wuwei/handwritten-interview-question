@@ -45,6 +45,7 @@ const myNew = (ctor, ...args) => {
 	// 如果构造函数的执行结果是Object(包含`Function`, `Array`, `Date`, `RegExg`, `Error`, `null`)类型 就返回执行结果
 	const isObject = typeof ret === 'object' && ret !== null;
 	const isFunction = typeof ret === 'function';
+
 	if (isObject || isFunction) {
 		return ret;
 	}
