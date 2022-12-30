@@ -7,12 +7,30 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<div id="box">1</div>
-		<div id="box">2</div>
-		<!-- <script src="./ajax/ajax.js"></script> -->
+		<div>
+			<p></p>
+			<h1></h1>
+			<a href=""></a>
+		</div>
 
 		<script type="module">
-			console.log(document.getElementById('box'));
+			const div = document.getElementsByTagName('div')[0];
+			const h1 = document.getElementsByTagName('h1')[0];
+			const a = document.getElementsByTagName('a')[0];
+
+			const oStrong = document.createElement('strong');
+
+			Element.prototype.insertAfter = function (target, afterNode) {
+				const nextElement = afterNode.nextElementSibling;
+				if (nextElement) {
+					this.insertBefore(target, nextElement);
+				} else {
+					this.appendChild(nextElement);
+				}
+			};
+
+			div.insertAfter(oStrong, h1);
+			// console.log(document.getElementById('box'));
 			// 'use strict';
 			// static 静态
 			// strict 严格
